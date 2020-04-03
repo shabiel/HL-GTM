@@ -59,6 +59,7 @@ LINUX(LINKNAME) ;Listener for Linux systems running under Xinetd.
  Q:$$CHKSTOP^HLOPROC
  ;
  I ^%ZOSF("OS")["OpenM" D $ZU(68,15,1) ;need error on disconnect
+ I ^%ZOSF("OS")["GT.M" U $P:IOERROR="TRAP" ; ditto for GT.M
  D SERVER(LINKNAME,$PRINCIPAL)
  Q
  ;
