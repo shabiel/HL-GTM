@@ -1,5 +1,5 @@
 HLOPROC ;ALB/CJM- Generic HL7 Process - 10/4/94 1pm ;03/26/2012
- ;;1.6;HEALTH LEVEL SEVEN;**126,134,146,147,158**;Oct 13, 1995;Build 14
+ ;;1.6;HEALTH LEVEL SEVEN;**126,134,146,147,158,10001**;Oct 13, 1995;Build 14
  ;Per VHA Directive 2004-038, this routine should not be modified.
  ;
 PROCESS ;queued entry point
@@ -92,6 +92,9 @@ ERROR ;error trap
  ;execution
  I '$G(^HLTMP("LOG ALL ERRORS")),($ECODE["READ")!($ECODE["NOTOPEN")!($ECODE["DEVNOTOPN")!($ECODE["WRITE")!($ECODE["OPENERR") D  Q:$QUIT "" Q
  .S $ECODE=""
+ ;
+ ;*10001* ditto for GT.M
+ I '$G(^HLTMP("LOG ALL ERRORS")),($ECODE["150373082")!($ECODE["150381546")!($ECODE["150373090") S $EC="" Q:$Q "" Q
  ;
  ;add to the process's count for the type of error
  N HOUR
