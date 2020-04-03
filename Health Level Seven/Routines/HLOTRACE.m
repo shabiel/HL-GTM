@@ -1,5 +1,5 @@
 HLOTRACE ;;OIFO-OAK/PIJ/CJM ;03/07/2011
- ;;1.6;HEALTH LEVEL SEVEN;**146,147,153** ;Oct 13, 1995;Build 11
+ ;;1.6;HEALTH LEVEL SEVEN;**146,147,153,10001** ;Oct 13, 1995;Build 11
  ;Per VHA Directive 2004-038, this routine should not be modified.
  ;;
  ;; HLO CLIENT TRACE Tool
@@ -13,9 +13,13 @@ START ;
  D OWNSKEY^XUSRB(.CONF,"XUPROG",DUZ)
  I 'CONF(0) D  Q
  . W !!,"   Sorry, you are not authorized to use this tool.",!!
- ;I $P($$VERSION^%ZOSV(1),"/",1)'="Cache for OpenVMS" D  Q
- ;I $P($$VERSION^%ZOSV(1),"/",1)'["Cache" D  Q  ; *10001* remove restriction
- ;. W !!,"   Sorry, this tool can only be used under Cache",!!
+ ; *10001*
+ N CACHE,GTM
+ S CACHE=^%ZOSF("OS")["OpenM"
+ S GTM=^%ZOSF("OS")["GT.M"
+ I 'CACHE,'GTM D  Q
+ .W !!,"   Sorry, this tool can only be used under Cache or GT.M",!!
+ ; *10001*
  N LINK,PORT,QUE,SUB,WORK,HLMSTATE,HLCSTATE,OLD,MAXTRACE,TRACECNT
  S LINK=$$ASKLINK^HLOUSR
  Q:LINK=""
@@ -48,7 +52,7 @@ SBREAK(EP,ACTION) ; *10001*
  I ^%ZOSF("OS")["GT.M"  ZB @(EP_":"""_$$CONVQQ^DILIBF(ACTION)_"""")
  QUIT
  ;
-SETBREAKS ;
+SETBREAKS ; *10001* refactored to not use ZB but call SBREAK
  ;
  ;set break in $$STOPPED^HLOQUE to circumvent shutdown of the queue
  D SBREAK("ZB0^HLOQUE","S RET=0")
@@ -132,8 +136,8 @@ WRITE3(MSG) ;
  ;
 ZB3 ;
  N CON,MSG
- I ^%ZOSF("OS")["OpenM" S CON=($ZA\8192#2)
- I ^%ZOSF("OS")["GT.M"  S CON=$KEY["ESTABLISHED"
+ I ^%ZOSF("OS")["OpenM" S CON=($ZA\8192#2) ; *10001*
+ I ^%ZOSF("OS")["GT.M"  S CON=$KEY["ESTABLISHED" ; *10001*
  S MSG="Error encountered, $ECODE="_$ECODE
  D WRITE^HLOTRACE(MSG)
  S MSG=$S(CON:"           TCP connection still active",1:"          TCP connection was dropped")
