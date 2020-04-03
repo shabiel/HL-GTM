@@ -1,5 +1,5 @@
 HLOPROC1 ;ALB/CJM/OAK/PIJ- Process Manager - 10/4/94 1pm ;12/30/2010
- ;;1.6;HEALTH LEVEL SEVEN;**126,138,139,147,153**;Oct 13, 1995;Build 11
+ ;;1.6;HEALTH LEVEL SEVEN;**126,138,139,147,153,10001**;Oct 13, 1995;Build 11
  ;Per VHA Directive 2004-038, this routine should not be modified.
  ;
  ;
@@ -75,7 +75,7 @@ GETPROC(IEN,PROCESS) ;
  .S PROCESS("NODE")=$P($G(^%ZIS(14.7,PROCESS("NODE"),0)),"^")
  E  S PROCESS("NODE")=""
  I '$L(PROCESS("NODE")) S PROCESS("NODE")=$$GETNODE^HLOSITE
- Q 1
+ Q:$Q 1 Q  ; *10001
  ;
 STOPHL7 ;shut down HLO HL7
  N ZTSK,DOLLARJ
