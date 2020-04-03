@@ -1,6 +1,9 @@
-HLOTRACE ;;OIFO-OAK/PIJ/CJM ;03/07/2011
+HLOTRACE ;ALB/CJM - Client Trace ;Apr 03, 2020@14:48
  ;;1.6;HEALTH LEVEL SEVEN;**146,147,153,10001** ;Oct 13, 1995;Build 11
- ;Per VHA Directive 2004-038, this routine should not be modified.
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
  ;;
  ;; HLO CLIENT TRACE Tool
  ;; *** For troubleshooting HLO client issues ***

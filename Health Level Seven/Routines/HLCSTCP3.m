@@ -1,7 +1,11 @@
-HLCSTCP3 ;SFIRMFO/RSD - BI-DIRECTIONAL TCP ;2018-09-06  10:24 AM
+HLCSTCP3 ;SFIRMFO/RSD - BI-DIRECTIONAL TCP ;Apr 03, 2020@14:43
  ;;1.6;HEALTH LEVEL SEVEN;**76,77,133,122,153,157,10001**;OCT 13, 1995;Build 8
  ;
- ; Changes **10001** by Sam Habiel (c) 2018
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
+ ; 
  ;
 OPENA ;
  ; called from $$OPEN^HLCSTCP2 and this sub-routine OPENA

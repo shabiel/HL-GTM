@@ -1,6 +1,9 @@
-HLOSRVR ;ALB/CJM - Server for receiving messages - 10/4/94 1pm ;06/25/2012
+HLOSRVR ;ALB/CJM - Server for receiving messages;Apr 03, 2020@14:46
  ;;1.6;HEALTH LEVEL SEVEN;**126,130,131,134,137,138,139,143,147,157,158,10001**;Oct 13, 1995;Build 14
- ;Per VHA Directive 2004-038, this routine should not be modified.
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Sam Habiel (c) 2018 & Lloyd Milligan (c) 2011.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
  ;
 GETWORK(WORK) ;
  ;GET WORK function for a single server or a Taskman multi-server

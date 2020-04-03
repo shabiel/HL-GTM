@@ -1,7 +1,10 @@
-HLOSITE ;ALB/CJM/OAK/PIJ-HL7 - API for getting site parameters ;03/26/2012
+HLOSITE ;ALB/CJM/OAK/PIJ-HL7 - API for getting site parameters ;Apr 03, 2020@14:44
  ;;1.6;HEALTH LEVEL SEVEN;**126,138,147,153,158,10001**;Oct 13, 1995;Build 14
- ;Per VHA Directive 2004-038, this routine should not be modified.
  ;
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
 SYSPARMS(SYSTEM) ;Gets system parameters from file 779.1
  ;Input: none
  ;Output:  SYSTEM array (pass by reference)

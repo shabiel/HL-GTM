@@ -1,6 +1,9 @@
-HLOPROC1 ;ALB/CJM/OAK/PIJ- Process Manager - 10/4/94 1pm ;12/30/2010
+HLOPROC1 ;ALB/CJM/OAK/PIJ- Process Manager;Apr 03, 2020@14:44
  ;;1.6;HEALTH LEVEL SEVEN;**126,138,139,147,153,10001**;Oct 13, 1995;Build 11
- ;Per VHA Directive 2004-038, this routine should not be modified.
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Lloyd Millgan (c) 2011.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
  ;
  ;
 GETWORK(PROCESS) ;

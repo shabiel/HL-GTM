@@ -1,6 +1,9 @@
-HLOPING ;alb/cjm HLO PING UTILITY - 10/4/94 1pm ;07/12/2012
+HLOPING ;alb/cjm HLO PING UTILITY;Apr 03, 2020@14:49
  ;;1.6;HEALTH LEVEL SEVEN;**147,155,158,10001**;Oct 13, 1995;Build 14
- ;Per VHA Directive 2004-038, this routine should not be modified.
+ ; Original code in the public domain by Dept of Veterans Affairs.
+ ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes indicated inline.
+ ; Licensed under Apache 2.0.
  ;
  ;
 PING ;
