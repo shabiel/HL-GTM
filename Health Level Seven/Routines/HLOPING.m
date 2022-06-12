@@ -1,7 +1,8 @@
 HLOPING ;alb/cjm HLO PING UTILITY;Apr 03, 2020@14:49
- ;;1.6;HEALTH LEVEL SEVEN;**147,155,158,10001**;Oct 13, 1995;Build 14
+ ;;1.6;HEALTH LEVEL SEVEN;**147,155,158,172,10001,10002**;Oct 13, 1995;Build 14
  ; Original code in the public domain by Dept of Veterans Affairs.
- ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes **10001,10002** by Sam Habiel (c) 2020,2022.
+ ; *10002 is integration of *172
  ; Changes indicated inline.
  ; Licensed under Apache 2.0.
  ;

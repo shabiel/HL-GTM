@@ -1,7 +1,8 @@
 HLOTRACE ;ALB/CJM - Client Trace ;Apr 03, 2020@14:48
- ;;1.6;HEALTH LEVEL SEVEN;**146,147,153,10001** ;Oct 13, 1995;Build 11
+ ;;1.6;HEALTH LEVEL SEVEN;**146,147,153,172,10001,10002** ;Oct 13, 1995;Build 11
  ; Original code in the public domain by Dept of Veterans Affairs.
- ; Changes **10001** by Sam Habiel (c) 2020.
+ ; Changes **10001** by Sam Habiel (c) 2020,2022.
+ ; *10002 integration of *172
  ; Changes indicated inline.
  ; Licensed under Apache 2.0.
  ;;
@@ -209,7 +210,7 @@ ZB20 ;
  D WRITE^HLOTRACE("Message on queue was already transmitted, will be deleted from queue...")
  Q
 ZB21 ;
- D WRITE^HLOTRACE("MSA segment shows this is not a commmit ack to the message transmitted...")
+ D WRITE^HLOTRACE("MSA segment shows this is not a commit ack to the message transmitted...")
  Q
 ZB22 ;
  D WRITE^HLOTRACE("Commit ack not CA, message status set to error...")
@@ -240,7 +241,7 @@ ASKQUE(SUB) ;
  .S DIR("B")=Q1
  S DIR(0)="F^1:20"
  S DIR("A")="What is the name of the queue"
- S DIR("?",1)="To use this tool, there must be messages aleady pending transmission."
+ S DIR("?",1)="To use this tool, there must be messages already pending transmission."
  S DIR("?")="Enter the name of the queue, or '^' to exit."
  D ^DIR
  I $D(DIRUT)!(Y="") Q ""
